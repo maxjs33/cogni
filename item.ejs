@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figure Weights Test Item <%= itemNumber %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Item <%= itemNumber %></h1>
+        <form action="/item/<%= itemNumber %>" method="POST">
+            <img src="/images/item<%= itemNumber %>.png" alt="Item <%= itemNumber %>">
+            <p>Select the correct option:</p>
+            <div>
+                <input type="radio" id="option1" name="item<%= itemNumber %>" value="1" required>
+                <label for="option1">1</label>
+            </div>
+            <div>
+                <input type="radio" id="option2" name="item<%= itemNumber %>" value="2">
+                <label for="option2">2</label>
+            </div>
+            <div>
+                <input type="radio" id="option3" name="item<%= itemNumber %>" value="3">
+                <label for="option3">3</label>
+            </div>
+            <div>
+                <input type="radio" id="option4" name="item<%= itemNumber %>" value="4">
+                <label for="option4">4</label>
+            </div>
+            <div>
+                <input type="radio" id="option5" name="item<%= itemNumber %>" value="5">
+                <label for="option5">5</label>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        setTimeout(() => {
+            document.querySelector('form').submit();
+        }, <%= timeLimit * 1000 %>);
+    </script>
+</body>
+</html>
